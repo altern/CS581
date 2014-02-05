@@ -46,3 +46,7 @@ p₈ = ↦NotTrue then refl
 
 p₉ : not (not false) ↦* false
 p₉ = ↦Not ↦NotFalse then (↦NotTrue then refl)
+
+p₁₀ : not ( not ( not true ) ) ↦* false
+p₁₀ = ↦Not ( ↦Not ↦NotTrue) then (↦Not ↦NotFalse then (↦NotTrue then  refl))
+
