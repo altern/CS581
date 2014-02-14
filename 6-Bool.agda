@@ -21,6 +21,36 @@ data Term : Set where
 
 infix 60 if_then_else_
 
+data Bool : Set where
+  true : Bool
+  false : Bool
+
+¬ : Bool → Bool
+¬ true = false
+¬ false = true
+
+_∧_ : Bool → Bool → Bool
+false ∧ _ = false
+true ∧ a  = a
+
+infix 3 _∨_
+
+infix 2 _≡_
+
+_∨_ : Bool → Bool → Bool
+true ∨ _ = true
+false ∨ a = a
+
+data _≡_ {A : Set} : A → A → Set where
+  refl : ∀ { x : A } → x ≡ x
+
+deMorgan1 : ∀ {a b} → ¬(a ∧ b) ≡ ¬ a ∨ ¬ b
+deMorgan1 {true} {x} = refl
+deMorgan1 {false} {y} = refl
+
+neg-cancel : {a : Bool} → ¬(¬ a) ≡ a
+neg-cancel {true} = refl
+neg-cancel {false} = refl
 
 -- example expression
 --
