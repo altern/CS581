@@ -11,11 +11,11 @@ data Term : Set where
   false : Term
   if_then_else_ : Term → Term → Term → Term
 
-data _^^^_ : Term → Type → Set where
-  :-zero : zero ^^^ Int
-  :-true : true ^^^ Bool
-  :-false : false ^^^ Bool
-  :-int : (t : Term)→  t ^^^ Int → (succ t) ^^^ Int
-  :-if : (t t₁ t₂ : Term)  (T : Type)→ t ^^^ Bool → t₁ ^^^ T → t₂ ^^^ T → if t then t₁ else t₂ ^^^ T
+data _∶_ : Term → Type → Set where
+  :-zero : zero ∶ Int
+  :-true : true ∶ Bool
+  :-false : false ∶ Bool
+  :-int : (t : Term)→  t ∶ Int → (succ t) ∶ Int
+  :-if : (t t₁ t₂ : Term)  (T : Type)→ t ∶ Bool → t₁ ∶ T → t₂ ∶ T → if t then t₁ else t₂ ∶ T
   
 
