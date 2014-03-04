@@ -1,5 +1,4 @@
 module 5-Basics where
-
 -- data types
 --
 data Bool : Set where

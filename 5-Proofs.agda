@@ -1,8 +1,6 @@
 module 5-Proofs where
 
 open import 5-Basics using (ℕ; suc; zero; _+_; Bool; true; false; ¬; _∧_)
-
-
 -- data types
 --
 infixr 10 _∷_
@@ -25,6 +23,7 @@ infix 2 _≡_
 
 data _≡_ {A : Set} : A → A → Set where
   refl : {x : A} → x ≡ x
+--  trans : { x y z : A } → x ≡ y → y ≡ z → x ≡ z
 
 -- data _≡_ {A : Set} (x : A) : A → Set where
 --   refl : x ≡ x
@@ -57,8 +56,9 @@ neg-cancel {false} = refl
 
 -- congruence
 --
-cong : {A B : Set} (f : A → B) → {x y : A} → x ≡ y → f x ≡ f y
+cong : {A B : Set} (f : A → B) → {x : A} → {y : A} → x ≡ y → f x ≡ f y
 cong f refl = refl
+-- cong f trans = trans
 
 0-isRightNeutral : {n : ℕ} → n + 0 ≡ n
 0-isRightNeutral {zero}  = refl 
