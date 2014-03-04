@@ -50,8 +50,11 @@ testUp2 = ↦Up
 testRefl : [] ~ 6 , 10 ↦* [] ~ 6 , 10
 testRefl = refl
 
-testMultiple1 : ( up 3 ∷ [] ) ~ 0 , 0 ↦* ( [] ) ~ 0 , 5
+testMultiple1 : ( up 5 ∷ [] ) ~ 0 , 0 ↦* ( [] ) ~ 0 , 5
 testMultiple1 = ↦Up then refl
 
--- testMultiple : ( right 5 ∷ up 3 ∷ [] ) ~ 0 , 0 ↦* ([]) ~ 5 , 3
--- testMultiple = ↦Right then ↦Up then refl
+testMultiple : ( right 5 ∷ up 3 ∷ [] ) ~ 0 , 0 ↦* ([]) ~ 5 , 3  
+testMultiple = ↦Right then ↦Up then refl
+
+
+
